@@ -1,0 +1,21 @@
+﻿<meta>
+  <info name="User Connection" />
+
+  <!-- Boilerplate-->
+  <file src="client/resources/boilerplate.css" />
+  <file src="client/resources/boilerplate.html" />
+  <file src="client/resources/welcomescreen.html" />
+  <file src="client/resources/logo.png" />
+  <file src="client/resources/Login.html" />
+  <file src="client/resources/Register.html" />
+  <!-- Main -->
+  <script src="client/main.js" type="client" lang="javascript" />
+
+  <script src="server/UserJoin.cs" type="server" lang="csharp" />
+
+  <!--
+  <script src="server/Database.cs" type="server" lang="csharp" />
+  <assembly ref="System.Data.dll" />
+  <assembly ref="MySql.Data.dll" />
+  -->
+</meta>

@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <style>
+            body{
+                color: white;
+            }
+
+            .container {
+                background-color: #181818;
+                width: 350px;
+                height: 450px;
+                margin: 0 auto;
+            }
+
+            .title{
+                text-align: center;
+                padding-top: 10px;
+                font-size: xx-large;
+            }
+
+           .register {
+                width: 100%;
+                height: 100px;
+                padding-top: 38px;
+            }
+
+            .registerBTN {
+                float: left;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                color: white;
+                font-size: xx-large;
+                transition-duration: 0.4s;
+            }
+
+             .registerBTN:hover {
+                background-color: green;
+            }
+
+            .registerBTN:focus {
+                outline: 0px;
+            }
+
+            .username{
+                text-align: center;
+            }
+
+            .password{
+                text-align: center;
+            }
+
+
+        </style>
+
+        <script>
+            function Register()
+            {
+                var userName = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                resourceCall("Register", userName, password);
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="Title"> <h1> Register </h1> </div>
+            <div class="username">
+                <h3>Username:</h3>
+                <input id="username" class="usernameInput" type="text"/> 
+            </div>
+            <div class="password">
+                <h3>Password:</h3>
+                <input id="password" class="passwordInput" type="password"/> 
+            </div>
+            <div class="register"> <input class="registerBTN" type="button" value="Register" onclick="Register();"/> </div>
+        </div>
+    </body>
+
+</html>

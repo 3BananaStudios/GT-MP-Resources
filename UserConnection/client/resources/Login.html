@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <style>
+            body{
+                color: white;
+            }
+
+            .container {
+                background-color: #181818;
+                width: 350px;
+                height: 450px;
+                margin: 0 auto;
+            }
+
+            .title{
+                text-align: center;
+                padding-top: 10px;
+                font-size: xx-large;
+            }
+
+           .login {
+                width: 100%;
+                height: 100px;
+                padding-top: 38px;
+            }
+
+            .loginBTN {
+                float: left;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                color: white;
+                font-size: xx-large;
+                transition-duration: 0.4s;
+            }
+
+             .loginBTN:hover {
+                background-color: green;
+            }
+
+            .loginBTN:focus {
+                outline: 0px;
+            }
+
+            .username{
+                text-align: center;
+            }
+
+            .password{
+                text-align: center;
+            }
+
+
+        </style>
+
+        <script>
+            function Login()
+            {
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                if (username != "" && password != "")
+                {
+                    resourceCall("Login", username, password)
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="Title"> <h1> Login </h1> </div>
+            <div class="username">
+                <h3>Username:</h3>
+                <input id="username" class="usernameInput" type="text"/> 
+            </div>
+            <div class="password">
+                <h3>Password:</h3>
+                <input id="password" class="passwordInput" type="password"/> 
+            </div>
+            <div class="login"> <input class="loginBTN" type="button" value="Login" onclick="Login();"/> </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,6 @@
+﻿<meta>
+  <info name="PlayerUI"/>
+
+  <script src="Client/main.js" type="client" lang="javascript" />
+  <script src="Server/UserUI.cs" type="server" lang="csharp" />
+</meta>

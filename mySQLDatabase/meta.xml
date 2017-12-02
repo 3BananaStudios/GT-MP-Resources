@@ -1,0 +1,13 @@
+﻿<meta>
+  <info name="mySQL" description="Resource for mySQL" />
+  <assembly ref="System.Data.dll" />
+  <assembly ref="MySql.Data.dll" />
+
+  <!--DATABASE-->
+  <script src="/Database/Database.cs" type="server" lang="csharp" />
+
+  <export function="PlayerExists" class="Database" />
+  <export function="RegisterNewUser" class="Database" />
+  <export function="CheckPassword" class="Database" />
+  <export function="GetSkinID" class="Database" />
+</meta>

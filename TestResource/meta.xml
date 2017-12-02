@@ -1,0 +1,5 @@
+﻿<meta>
+  <info name="Mines" description="Test resource" />
+  <script src="mines.cs" type="server" lang="csharp" />
+  <script src="lmao.cs" type="server" lang="csharp" />
+</meta>

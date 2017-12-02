@@ -1,0 +1,13 @@
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\mySQLDatabase.dll
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\mySQLDatabase.pdb
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\BCrypt.Net.dll
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\GrandTheftMultiplayer.Server.exe
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\GrandTheftMultiplayer.Shared.dll
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\MySql.Data.dll
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\NLog.dll
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\BCrypt.Net.pdb
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\BCrypt.Net.xml
+C:\GT-MP\resources\mySQLDatabase\bin\Debug\NLog.xml
+C:\GT-MP\resources\mySQLDatabase\obj\Debug\mySQLDatabase.csprojResolveAssemblyReference.cache
+C:\GT-MP\resources\mySQLDatabase\obj\Debug\mySQLDatabase.dll
+C:\GT-MP\resources\mySQLDatabase\obj\Debug\mySQLDatabase.pdb

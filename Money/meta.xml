@@ -1,0 +1,21 @@
+﻿<meta>
+  <info name="MoneyAPI Script" />
+
+  <script src="Money.cs" type="server" lang="csharp" />
+
+  <!--
+  <export class="MoneyAPI" function="GetMoney" />
+  //<export class="MoneyAPI" function="ChangeMoney" />
+  //<export class="MoneyAPI" function="SetMoney" />
+  -->
+
+  <settings>
+    <setting name="moneyDefault" value="250" default="250" description="Starting money" />
+    <setting name="moneyInterval" value="1" default="5" description="Autosave interval in minutes, write 0 to disable." />
+    <setting name="moneySave" value="true" default="false" description="Save money after every operation. (not recommended)" />
+  </settings>
+
+  <assembly ref="System.Data.dll" />
+  <assembly ref="MySql.Data.dll" />
+  
+</meta>

@@ -1,0 +1,12 @@
+C:\GT-MP\resources\TestResource\bin\Debug\TestResource.dll
+C:\GT-MP\resources\TestResource\bin\Debug\TestResource.pdb
+C:\GT-MP\resources\TestResource\bin\Debug\BCrypt.Net.dll
+C:\GT-MP\resources\TestResource\bin\Debug\GrandTheftMultiplayer.Server.exe
+C:\GT-MP\resources\TestResource\bin\Debug\GrandTheftMultiplayer.Shared.dll
+C:\GT-MP\resources\TestResource\bin\Debug\NLog.dll
+C:\GT-MP\resources\TestResource\bin\Debug\BCrypt.Net.pdb
+C:\GT-MP\resources\TestResource\bin\Debug\BCrypt.Net.xml
+C:\GT-MP\resources\TestResource\bin\Debug\NLog.xml
+C:\GT-MP\resources\TestResource\obj\Debug\TestResource.csprojResolveAssemblyReference.cache
+C:\GT-MP\resources\TestResource\obj\Debug\TestResource.dll
+C:\GT-MP\resources\TestResource\obj\Debug\TestResource.pdb

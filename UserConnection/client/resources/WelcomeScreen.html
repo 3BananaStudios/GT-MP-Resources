@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style>
+            body{
+                color: white;
+            }
+
+            .container {
+                background-color: #181818;
+                width: 350px;
+                height: 450px;
+                margin: 0 auto;
+            }
+
+            .title{
+                text-align: center;
+                padding-top: 10px;
+                font-size: xx-large;
+            }
+
+            .login, .register{
+                width: 100%;
+                height: 100px;
+                
+            }
+
+            .register{
+                padding-top: 20px;
+            }
+
+            .loginBTN, .registerBTN{
+                float: left;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                color: white;
+                font-size: xx-large;
+                transition-duration: 0.4s;
+            }
+
+            .loginBTN:hover, .registerBTN:hover{
+                background-color: green;
+            }
+
+            .loginBTN:focus, .registerBTN:focus{
+                outline: 0px;
+            }
+
+
+        </style>
+
+        <script>
+            function Login()
+            {
+                resourceCall("ShowLogin");
+            }
+            
+            function Register()
+            {
+                resourceCall("ShowRegister");
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="Title"> <h1> Welcome... </h1> </div>
+            <div class="login"> <input class="loginBTN" type="button" value="Login" onclick="Login();"/> </div>
+            <div class="register"> <input class="registerBTN" type="button" value="Register" onclick="Register();"/> </div>
+        </div>
+    </body>
+
+</html>

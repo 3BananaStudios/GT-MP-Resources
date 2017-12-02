@@ -1,0 +1,13 @@
+C:\GT-MP\resources\UserConnection\bin\Debug\UserConnection.dll
+C:\GT-MP\resources\UserConnection\bin\Debug\UserConnection.pdb
+C:\GT-MP\resources\UserConnection\bin\Debug\BCrypt.Net.dll
+C:\GT-MP\resources\UserConnection\bin\Debug\GrandTheftMultiplayer.Server.exe
+C:\GT-MP\resources\UserConnection\bin\Debug\GrandTheftMultiplayer.Shared.dll
+C:\GT-MP\resources\UserConnection\bin\Debug\MySql.Data.dll
+C:\GT-MP\resources\UserConnection\bin\Debug\NLog.dll
+C:\GT-MP\resources\UserConnection\bin\Debug\BCrypt.Net.pdb
+C:\GT-MP\resources\UserConnection\bin\Debug\BCrypt.Net.xml
+C:\GT-MP\resources\UserConnection\bin\Debug\NLog.xml
+C:\GT-MP\resources\UserConnection\obj\Debug\UserConnection.csprojResolveAssemblyReference.cache
+C:\GT-MP\resources\UserConnection\obj\Debug\UserConnection.dll
+C:\GT-MP\resources\UserConnection\obj\Debug\UserConnection.pdb
