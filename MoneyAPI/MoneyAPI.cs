@@ -39,8 +39,8 @@ namespace MoneyAPI
 
 			connection.Open();
 
-			command.CommandText = "SELECT Money FROM wallets WHERE SocialClub=@sc";
-			command.Parameters.AddWithValue("@sc", player.socialClubName);
+			command.CommandText = "SELECT Money FROM wallets WHERE Username=@user";
+			command.Parameters.AddWithValue("@user", player.getData("username"));
 
 			reader = command.ExecuteReader();
 			if (reader.HasRows)
@@ -66,8 +66,8 @@ namespace MoneyAPI
 			command = connection.CreateCommand();
 			connection.Open();
 
-			command.CommandText = "INSERT INTO wallets (SocialClub, Money) VALUES (@sc, @money)";
-			command.Parameters.AddWithValue("@sc", player.socialClubName);
+			command.CommandText = "INSERT INTO wallets (Username, Money) VALUES (@user, @money)";
+			command.Parameters.AddWithValue("@user", player.getData("username"));
 			command.Parameters.AddWithValue("@money", StartingMoney);
 			command.ExecuteNonQuery();
 
@@ -84,9 +84,9 @@ namespace MoneyAPI
 			command = connection.CreateCommand();
 			connection.Open();
 
-			command.CommandText = "UPDATE wallets SET Money=@money WHERE SocialClub=@sc";
+			command.CommandText = "UPDATE wallets SET Money=@money WHERE Username=@user";
 			command.Parameters.AddWithValue("@money", player.getData("wallet_Amount"));
-			command.Parameters.AddWithValue("@sc", player.socialClubName);
+			command.Parameters.AddWithValue("@user", player.getData("username"));
 			command.ExecuteNonQuery();
 
 			connection.Close();
@@ -94,7 +94,7 @@ namespace MoneyAPI
 			return true;
         }
 
-        public void WalletLog(Client player, long amount, string function)
+        /*public void WalletLog(Client player, long amount, string function)
         {
             using (MySqlConnection sqlCon = new MySqlConnection(myConnectionString))
             {
@@ -103,7 +103,7 @@ namespace MoneyAPI
                     try {
                         sqlCon.Open();
 
-                        sqlCmd.CommandText = "INSERT INTO wallet_logs (SocialClub, Amount, Function, Date) VALUES (@sc, @amount, @func, DATETIME('NOW', 'LOCALTIME'))";
+                        sqlCmd.CommandText = "INSERT INTO wallet_logs (Username, Amount, Function, Date) VALUES (@sc, @amount, @func, DATETIME('NOW', 'LOCALTIME'))";
                         sqlCmd.Parameters.AddWithValue("@sc", player.socialClubName);
                         sqlCmd.Parameters.AddWithValue("@amount", amount);
                         sqlCmd.Parameters.AddWithValue("@func", function);
@@ -115,7 +115,7 @@ namespace MoneyAPI
                     }
                 }
             }
-        }
+        }*/
 
         public long GetMoney(Client player)
         {
@@ -130,7 +130,7 @@ namespace MoneyAPI
             SaveList.Add(player);
 
             if (SaveEverytime) SaveWallet(player);
-            if (Logging) WalletLog(player, amount, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            //if (Logging) WalletLog(player, amount, System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public void SetMoney(Client player, long amount)
@@ -141,7 +141,7 @@ namespace MoneyAPI
             SaveList.Add(player);
 
             if (SaveEverytime) SaveWallet(player);
-            if (Logging) WalletLog(player, amount, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            //if (Logging) WalletLog(player, amount, System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public MoneyAPI()

@@ -25,16 +25,16 @@ public class UserJoin : Script
 	
 	public void Login(Client player, string username, string password)
 	{
-		var doesPlayerExist = API.exported.mySQLDatabase.PlayerExists(player);
+		var doesPlayerExist = API.exported.mySQLDatabase.PlayerExists(username);
 
 		if (doesPlayerExist)
 		{
-			var isPasswordCorrect = API.exported.mySQLDatabase.CheckPassword(player, password);
+			var isPasswordCorrect = API.exported.mySQLDatabase.CheckPassword(username, password);
 			if (isPasswordCorrect)
 			{
+				player.setData("username", username);
 				API.triggerClientEvent(player, "successfulLogin");
 				API.exported.MoneyAPI.InitPlayer(player);
-				SetPlayerStats(player, username);
 			}
 			else
 				API.triggerClientEvent(player, "failedLogin");
@@ -47,17 +47,17 @@ public class UserJoin : Script
 
 	public void Register(Client player, string username, string password)
 	{
-		var doesPlayerExist = API.exported.mySQLDatabase.PlayerExists(player);
+		var doesPlayerExist = API.exported.mySQLDatabase.PlayerExists(username);
 		if (doesPlayerExist)
 		{
 			API.triggerClientEvent(player, "failedRegisterUserExists");
 			return;
 		}
 
-		API.exported.mySQLDatabase.RegisterNewUser(player, username, password);
+		API.exported.mySQLDatabase.RegisterNewUser(username, password);
+		player.setData("username", username);
 		API.triggerClientEvent(player, "successfulRegister");
 		API.exported.MoneyAPI.InitPlayer(player);
-		SetPlayerStats(player, username);
 	}
 
 	public void SetPlayerStats(Client player, string username)

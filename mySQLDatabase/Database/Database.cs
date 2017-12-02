@@ -12,7 +12,7 @@ public class Database : Script
 	public static MySqlCommand command;
 	public static MySqlDataReader reader;
 
-	public Boolean PlayerExists(Client player)
+	public Boolean PlayerExists(string username)
 	{
 		//Create new connection
 		connection = new MySqlConnection(myConnectionString);
@@ -32,7 +32,7 @@ public class Database : Script
 			//string name = reader.GetString("social_club_name");
 			//Check if the player with that name exists
 			//API.consoleOutput(name);
-			if (player.socialClubName == reader.GetString("social_club_name"))
+			if (username == reader.GetString("Username"))
 			{
 				//If a user exists with this name then close the connection and return true
 				connection.Close();
@@ -43,7 +43,7 @@ public class Database : Script
 		return false;
 	}
 
-	public Boolean CheckPassword(Client player, string password)
+	public Boolean CheckPassword(string username, string password)
 	{
 		var hashedPassword = API.getHashSHA256(password);
 
@@ -51,8 +51,8 @@ public class Database : Script
 		//Create a new command
 		command = connection.CreateCommand();
 		//Set the command - Create a query
-		command.CommandText = "SELECT password FROM user WHERE social_club_name=@user";
-		command.Parameters.AddWithValue("user", player.socialClubName);
+		command.CommandText = "SELECT Password FROM user WHERE Username=@user";
+		command.Parameters.AddWithValue("user", username);
 
 		//Open connection
 		connection.Open();
@@ -66,7 +66,7 @@ public class Database : Script
 
 	}
 
-	public void RegisterNewUser(Client player, string username, string password)
+	public void RegisterNewUser(string username, string password)
 	{
 		var hashedPassword = API.getHashSHA256(password);
 		var skinID = -680474188;
@@ -75,8 +75,7 @@ public class Database : Script
 		connection.Open();
 		command = connection.CreateCommand();
 		//command.CommandText = "INSERT INTO user(social_club_name, password) VALUES('" + username + "','" + hashedPassword + "');";
-		command.CommandText = "INSERT INTO user(social_club_name, username, password, skinID) VALUES(@social_club_name, @username, @hashedPassword, @skinID)";
-		command.Parameters.AddWithValue("social_club_name", player.socialClubName);
+		command.CommandText = "INSERT INTO user(Username, Password, SkinID) VALUES(@username, @hashedPassword, @skinID)";
 		command.Parameters.AddWithValue("username", username);
 		command.Parameters.AddWithValue("hashedPassword", hashedPassword);
 		command.Parameters.AddWithValue("skinID", skinID);
@@ -87,14 +86,14 @@ public class Database : Script
 		connection.Close();
 	}
 
-	public PedHash GetSkinID(Client player)
+	public PedHash GetSkinID(string username)
 	{
 		connection = new MySqlConnection(myConnectionString);
 		//Create a new command
 		command = connection.CreateCommand();
 		//Set the command - Create a query
-		command.CommandText = "SELECT skinID FROM user WHERE social_club_name=@user";
-		command.Parameters.AddWithValue("user", player.socialClubName);
+		command.CommandText = "SELECT SkinID FROM user WHERE Username=@user";
+		command.Parameters.AddWithValue("user", username);
 
 		connection.Open();
 		PedHash skinID = (PedHash)command.ExecuteScalar();
