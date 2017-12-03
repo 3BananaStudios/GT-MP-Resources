@@ -69,16 +69,14 @@ public class Database : Script
 	public void RegisterNewUser(string username, string password)
 	{
 		var hashedPassword = API.getHashSHA256(password);
-		var skinID = -680474188;
 
 		connection = new MySqlConnection(myConnectionString);
 		connection.Open();
 		command = connection.CreateCommand();
 		//command.CommandText = "INSERT INTO user(social_club_name, password) VALUES('" + username + "','" + hashedPassword + "');";
-		command.CommandText = "INSERT INTO user(Username, Password, SkinID) VALUES(@username, @hashedPassword, @skinID)";
+		command.CommandText = "INSERT INTO user(Username, Password) VALUES(@username, @hashedPassword)";
 		command.Parameters.AddWithValue("username", username);
 		command.Parameters.AddWithValue("hashedPassword", hashedPassword);
-		command.Parameters.AddWithValue("skinID", skinID);
 
 		
 		command.ExecuteNonQuery();
@@ -100,6 +98,21 @@ public class Database : Script
 		connection.Close();
 
 		return skinID;
+	}
+
+	public void SetPlayerSkin(string username, int skinID)
+	{
+		connection = new MySqlConnection(myConnectionString);
+		//Create a new command
+		command = connection.CreateCommand();
+		//Set the command - Create a query
+		command.CommandText = "UPDATE user SET SkinID = @skinID WHERE Username=@user";
+		command.Parameters.AddWithValue("skinID", skinID);
+		command.Parameters.AddWithValue("user", username);
+
+		connection.Open();
+		command.ExecuteNonQuery();
+		connection.Close();
 	}
 
 	

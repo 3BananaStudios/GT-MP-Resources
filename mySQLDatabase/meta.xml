@@ -10,4 +10,5 @@
   <export function="RegisterNewUser" class="Database" />
   <export function="CheckPassword" class="Database" />
   <export function="GetSkinID" class="Database" />
+  <export function="SetPlayerSkin" class="Database" />
 </meta>

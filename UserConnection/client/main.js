@@ -51,12 +51,6 @@ API.onServerEventTrigger.connect(function (eventName, args) {
     }
 })
 
-
-API.onResourceStart.connect(function ()
-{
-    API.setCefDrawState(true);
-})
-
 var cef = null;
 API.onKeyDown.connect(function (sender, e) {
     if (cef === null && e.KeyCode === Keys.Up) {
@@ -98,6 +92,7 @@ function ShowRegister()
 
     cef = new CefHelper("client/resources/Register.html")
     cef.show()
+    
 }
 
 function Login(username, password)
@@ -113,3 +108,4 @@ function Register(username, password)
     cef = null
     API.triggerServerEvent("Register", username, password)
 }
+

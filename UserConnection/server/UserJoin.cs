@@ -58,6 +58,7 @@ public class UserJoin : Script
 		player.setData("username", username);
 		API.triggerClientEvent(player, "successfulRegister");
 		API.exported.MoneyAPI.InitPlayer(player);
+		API.exported.SkinSelector.SendToCreator(player);
 	}
 
 	public void SetPlayerStats(Client player, string username)
